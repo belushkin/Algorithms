@@ -1,6 +1,6 @@
 <?php
 
-// O(n^2) algorithm
+// O(n^2(logN)) algorithm
 
 $inputFile = fopen("input.txt", "r") or die("Unable to open file!");
 
@@ -13,8 +13,9 @@ fclose($inputFile);
 $n = $data[0];
 $numbers = explode(' ', $data[1]);
 
-sort($numbers);
-for ($i = 0; $i < ($n - 3); $i++) {
+sort($numbers); // O(N^2)
+
+for ($i = 0; $i < ($n - 3); $i++) { // O(logN)
     $a      = $numbers[$i];
     $start  = $i + 1;
     $end    = $n - 1;

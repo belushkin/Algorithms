@@ -5,7 +5,7 @@ function binary_search($value, $data = array()) {
     $high = count($data) - 1;
 
     while ($lo <= $high) {
-        $mid = $lo + floor($high - $lo / 2);
+        $mid = $lo + floor(($high - $lo) / 2);
         if ($value < $data[$mid]) {
             $high = $mid - 1;
         } elseif($value > $data[$mid]) {

@@ -3,65 +3,41 @@
 $inputFile = fopen("polindrome.txt", "r") or die("Unable to open file!");
 
 $data = array();
-while(!feof($inputFile)) {
+while (!feof($inputFile)) {
     $data[] = fgets($inputFile);
 }
 fclose($inputFile);
 
 for ($i = 1; $i < count($data); $i++) {
-    echo reverse(trim($data[$i])) . "\n";
-    exit();
+    echo palindrome(trim($data[$i]));
 }
 
-
-function polindrome($str)
+function palindrome($word)
 {
-    if ($str == "") {
-        return 0;
-    }
-    if (reverse($str) == $str) {
-        return -1;
-    }
+    $len = strlen($word);
+    $until = $len/2 - 1;
+    $is_pal = true;
 
-    for ($i = 0; $i < strlen($str); $i++) {
-        $chars = str_split($str);
-        unset($chars[$i]);
-        $substr = implode($chars,'');
-        if (reverse($substr) == $substr) {
-            return $i;
+    for($i=0; $i<$until; ++$i)
+    {
+        if($word[$i]!=$word[$len-$i-1])
+        {
+            $is_pal=false;
+            if($word[$len-$i-1]==$word[$i+1] && $word[$len-$i-2]==$word[$i+2])
+            {
+                echo $i."\n";
+                break;
+            }
+
+            else if($word[$i]==$word[$len-$i-2] && $word[$i+1]==$word[$len-$i-3])
+            {
+                echo ($len-$i-1)."\n";
+                break;
+            }
         }
     }
+
+    if($is_pal)
+        echo "-1\n";
+
 }
-
-// http://eddmann.com/posts/reversing-a-string-in-php/
-function reverse($str)
-{
-    if (strlen($str) < 2) {
-        return $str;
-    }
-
-    $mid = (int) strlen($str) / 2;
-    $lft = substr($str, 0, $mid);
-    $rgt = substr($str, $mid);
-
-    return reverse($rgt) . reverse($lft);
-}
-
-//function reverse($str)
-//{
-//    if (strlen($str) < 2) {
-//        return $str;
-//    }
-//    return reverse(substr($str, 1)) . $str[0];
-//}
-
-//function isPolindrome($str)
-//{
-//    for ($k = 0, $j = strlen($str)-1; $k < strlen($str), $j > 0; $k++, $j--) {
-//        if ($str[$k] != $str[$j]) {
-//            return false;
-//        }
-//    }
-//    return true;
-//}
-

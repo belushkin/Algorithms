@@ -25,19 +25,19 @@ function palindrome($word)
             $is_pal=false;
             if($word[$len-$i-1]==$word[$i+1] && $word[$len-$i-2]==$word[$i+2])
             {
-                echo $i."\n";
+                echo $i;
                 break;
             }
 
             else if($word[$i]==$word[$len-$i-2] && $word[$i+1]==$word[$len-$i-3])
             {
-                echo ($len-$i-1)."\n";
+                echo ($len-$i-1);
                 break;
             }
         }
     }
 
     if($is_pal)
-        echo "-1\n";
+        echo "-1";
 
 }

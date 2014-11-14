@@ -20,18 +20,42 @@
 //    oea("cat", "at") => true // insert "c"
 //    oea("cat", "cbat") => true // remove "b"
 
+// cbat cat
 function oea($str1, $str2)
 {
-    if (strlen($str1) > strlen($str2)) {
-        $str = preg_replace("/[$str2]/", '', "$str1");
-    } else {
-        $str = preg_replace("/[$str1]/", '', "$str2");
+    if ($str1 == $str2) {
+        return false;
     }
 
-    if (strlen($str) == 1) {
-        return true;
+    $length1 = strlen($str1);
+    $length2 = strlen($str2);
+
+    if ($length2 > $length1) {
+        return oea($str2, $str1);
     }
-    return false;
+
+    $theSame = false;
+    if ($length1 == $length2) {
+        $theSame = true;
+    }
+    $i = 0;
+    $bubble = null;
+    while ($i < $length1) {
+        if ($str1[$i] != @$str2[$i]) {
+            if (!is_null($bubble)) {
+                return false;
+            }
+            if (!$theSame) {
+                $bubble = $str1[$i];
+                $str1 = substr($str1, 0, $i) . substr($str1, $i + 1);
+                $length1 = strlen($str1);
+                continue;
+            }
+            $bubble = true;
+        }
+        $i++;
+    }
+    return true;
 }
 
 var_dump(oea('cat', 'cut'));

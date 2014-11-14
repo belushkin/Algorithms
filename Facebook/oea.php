@@ -64,3 +64,4 @@ var_dump(oea('ca', 'ca'));
 var_dump(oea('cats', 'cat'));
 var_dump(oea('cat', 'at'));
 var_dump(oea('cat', 'cbat'));
+var_dump(oea('tb', 'bt'));

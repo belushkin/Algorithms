@@ -13,18 +13,12 @@ class Tree
         $this->id = $id;
     }
 
-    public function addChild(Node &$n)
+    public function addChild(Tree &$n)
     {
         $n->parent = $this;
         $this->children[] = $n;
     }
 
-    /**
-     * Returns an element by its id
-     *
-     * @param mixed $id
-     * @return Node
-     */
     public function search($id)
     {
         if ($this->id == $id) {
@@ -41,13 +35,6 @@ class Tree
         return $a;
     }
 
-    /**
-     * Finds a path from the root to the
-     * item and returns it as a list
-     *
-     * @param mixed $id
-     * @return array
-     */
     public function find_path($id, &$path)
     {
         array_push($path, $this->id);
@@ -84,3 +71,6 @@ $div2->addChild($a);
 $path1 = $path2 = array();
 $dom->find_path('div-1', $path1);
 $dom->find_path('some-link', $path2);
+
+echo implode(' ', $path1), "\n";
+echo implode(' ', $path2), "\n";

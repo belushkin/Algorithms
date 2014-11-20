@@ -85,24 +85,24 @@ function calcShortestPaths(vertex $start, &$adjLists)
     $start->path = array($start->key);
 
     while ($q->valid()) {
-        $t = $q->extract();
-        $t->visited = 1;
+        $vertex = $q->extract();
+        $vertex->visited = 1;
 
-        $l = $adjLists[$t->key];
-        while ($l->valid()) {
-            $item = $l->current();
+        $list = $adjLists[$vertex->key];
+        while ($list->valid()) {
+            $item = $list->current();
 
             if (!$item['vertex']->visited) {
-                if ($item['vertex']->distance > $t->distance + $item['distance']) {
-                    $item['vertex']->distance = $t->distance + $item['distance'];
-                    $item['vertex']->parent = $t;
+                if ($item['vertex']->distance > $vertex->distance + $item['distance']) {
+                    $item['vertex']->distance = $vertex->distance + $item['distance'];
+                    $item['vertex']->parent = $vertex;
                 }
 
-                $item['vertex']->path = array_merge($t->path, array($item['vertex']->key));
+                $item['vertex']->path = array_merge($vertex->path, array($item['vertex']->key));
 
                 $q->insert($item["vertex"], $item["vertex"]->distance);
             }
-            $l->next();
+            $list->next();
         }
         $q->recoverFromCorruption();
         $q->rewind();

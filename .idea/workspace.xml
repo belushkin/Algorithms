@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b111de-ed9e-4b23-8c9c-704cc8ffe03c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt" afterPath="$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" afterPath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" afterPath="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,28 +32,7 @@
     <favorites_list name="Algorithms" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="belman_ford.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="1908">
-              <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bellman_ford.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -67,7 +45,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/BinaryTree/breadth_first_traversal_2.php" />
         <option value="$PROJECT_DIR$/BinaryTree/depth_first_traversal_1.php" />
         <option value="$PROJECT_DIR$/BinaryTree/lca_2.php" />
         <option value="$PROJECT_DIR$/HackerRank/LCS/LcsSolverInterface.php" />
@@ -116,8 +93,9 @@
         <option value="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.c" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/helloworld.cpp" />
-        <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp" />
+        <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" />
+        <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt" />
       </list>
     </option>
   </component>
@@ -339,7 +317,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1863" height="1084" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -724,14 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0794702" vertical-offset="0" max-vertical-offset="906">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.80794704" vertical-offset="1200" max-vertical-offset="2538">
@@ -740,18 +710,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp">
+    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="1908">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.096463025" vertical-offset="0" max-vertical-offset="933">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt">
+    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.615894" vertical-offset="0" max-vertical-offset="990">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4083601" vertical-offset="0" max-vertical-offset="1908">
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
           <folding />
         </state>
       </provider>

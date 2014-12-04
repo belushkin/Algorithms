@@ -2,7 +2,13 @@
 
 define('INFINITY', 10000000);
 
-define('INFINITY', 10000000);
+$matrix = array(
+    0 => array( 0,  7,  0,  0,  0),
+    1 => array( 0,  0,  7,  0,  0),
+    2 => array( 0,  0,  0,  7,  0),
+    3 => array( 0,  0,  0,  0,  7),
+    4 => array( 0,  0,  0,  0,  0),
+);
 
 $len = count($matrix);
 

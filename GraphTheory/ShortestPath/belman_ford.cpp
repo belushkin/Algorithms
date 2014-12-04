@@ -53,17 +53,17 @@ void BellmanFord(int src)
         for (j = 0; j < EDGES; ++j) {
             if (d[edges[j].u] + edges[j].w < d[edges[j].v]) {
                 d[edges[j].v] = d[edges[j].u] + edges[j].w;
-	    }
-	}
+            }
+        }
     }
-	
+
     for (i = 0; i < NODES - 1; ++i) {
         for (j = 0; j < EDGES; ++j) {
             if (d[edges[j].u] + edges[j].w < d[edges[j].v]) {
                 printf("Graph contains a negative-weight cycle\n");
-		exit(1);
-	    }
-	}
+                exit(1);
+            }
+        }
     }
 }
  

@@ -8,22 +8,24 @@ while (!feof($inputFile)) {
 }
 fclose($inputFile);
 
+define('INFINITY', 10000000);
+
 $i = 0;
 $j = 2;
 $g = build_graph();
 initial_fill_graph($g);
+$len = count($g);
 
 while ($i < $data[0]) {
-    $t = $g;
+    $dist       = array();
+    $t          = $g;
     $ladders    =  $data[$j];
     $snakes     =  $data[$j+1];
-    fill_graph($t, explode(" ", $ladders));
-    fill_graph($t, explode(" ", $snakes));
-    $bg = $t;
-    $list = find_vertices($t);
-    $ts = topological_sort($t, $list);
-    $distance = shortest_path($bg,$ts);
-//    print_r($distance);
+    //fill_ladders($t, explode(" ", $ladders));
+    //fill_snakes($t, explode(" ", $snakes));
+
+    print_r(dijkstra($t, 0, 99));
+    exit();
     $j = $j + 3;
     $i++;
 }
@@ -49,83 +51,85 @@ function initial_fill_graph(&$graph = array())
     }
 }
 
-function fill_graph(&$graph = array(), $range = array())
+//function fill_graph(&$graph = array(), $range = array())
+//{
+//    foreach ($range as $key => $value) {
+//        $t = explode(',', $value);
+//        foreach ($graph[$t[0]-1] as $key => $value) {
+//            $graph[$t[0]-1][$key] = 0;
+//        }
+//        $graph[$t[0]-1][$t[1]-1] = 1;
+//    }
+//}
+
+function fill_snakes(&$graph = array(), $range = array())
 {
+    $snakes = array();
     foreach ($range as $key => $value) {
         $t = explode(',', $value);
-        foreach ($graph[$t[0]-1] as $key => $value) {
-            $graph[$t[0]-1][$key] = 0;
+        $snakes[trim($t[0])] = trim($t[1]);
+    }
+
+    asort($snakes);
+    $weight = -1;
+    foreach ($snakes as $k => $v) {
+        foreach ($graph[$k-1] as $key => $value) {
+            $graph[$k-1][$key] = 0;
         }
-        $graph[$t[0]-1][$t[1]-1] = 1;
+        $graph[$k-1][$v-1] = $weight;
+        $weight--;
     }
 }
 
-function find_vertices($g = array())
+function fill_ladders(&$graph = array(), $range = array())
 {
-    $list   = array();
-    $len    = count($g);
-
-    // finds the vertices with no predecessors
-    $sum = 0;
-    for ($i = 0; $i < $len; $i++) {
-        for ($j = 0; $j < $len; $j++) {
-            $sum += $g[$j][$i];
-        }
-
-        if (!$sum) {
-            // append to list
-            array_push($list, $i);
-        }
-        $sum = 0;
+    $ladders = array();
+    foreach ($range as $key => $value) {
+        $t = explode(',', $value);
+        $ladders[trim($t[0])] = trim($t[1]);
     }
-    return $list;
+
+    asort($ladders);
+    $weight = 1;
+    foreach ($ladders as $k => $v) {
+        foreach ($graph[$k-1] as $key => $value) {
+            $graph[$k-1][$key] = 0;
+        }
+        $graph[$k-1][$v-1] = $weight;
+        $weight++;
+    }
 }
 
-function topological_sort($g = array(), $list = array())
+function dijkstra( array $g, $start, $end = null )
 {
-    $ts     = array();
-    $len    = count($g);
+    $d = array();
+    $p = array();
+    $q = array( 0 => $start );
 
-    while ($list) {
-        $t = array_shift($list);
-        array_push($ts, $t);
+    foreach( $q as $v )
+    {
+        $d[$v] = $q[$v];
+        if( $v == $end )
+            break;
 
-        foreach ($g[$t] as $key => $vertex) {
-            if ($vertex == 1) {
-                $g[$t][$key] = 0;
+        foreach( $g[$v] as $w )
+        {
+            $vw = $d[$v] + $g[$v][$w];
 
-                $sum = 0;
-                for ($i = 0; $i < $len; $i++) {
-                    $sum += $g[$i][$key];
+            if( in_array( $w, $d ))
+            {
+                if( $vw < $d[$w]) {
+                    throw new Exception('Dijkstra: found better path to already-final vertex');
                 }
 
-                if (!$sum) {
-                    array_push($list, $key);
-                }
             }
-            $sum = 0;
-        }
-    }
-    return $ts;
-}
-
-function shortest_path($g, $ts)
-{
-    $distance = array();
-    foreach ($ts as $key => $value) {
-        if ($key == 0) {
-            $distance[$value] = 0;
-        } else {
-            $distance[$value] = 10000000;
-        }
-    }
-
-    foreach ($ts as $i) {
-        foreach ($g[$i] as $key => $vertex) { // $this->_g[$i] => u, v = $vertex
-            if ($vertex != 0 && $distance[$key] > $distance[$i] + $vertex) {
-                $distance[$key] = $distance[$i] + $vertex;
+            elseif( $vw < $q[$w] )
+            {
+                $q[$w] = $vw;
+                $p[$w] = $v;
             }
         }
+
+        return array( $d, $p );
     }
-    return $distance;
 }

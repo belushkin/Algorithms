@@ -1,10 +1,8 @@
 <?php
 
-$matrix = array(
-    0 => array( 0,  3,  4),
-    1 => array( 0,  0,  2),
-    2 => array( 0,  -2, 0),
-);
+define('INFINITY', 10000000);
+
+define('INFINITY', 10000000);
 
 $len = count($matrix);
 

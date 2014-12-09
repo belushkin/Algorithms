@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b111de-ed9e-4b23-8c9c-704cc8ffe03c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp" afterPath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" afterPath="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" afterPath="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Algorithms.iws" />
@@ -58,7 +57,6 @@
         <option value="$PROJECT_DIR$/Facebook/lca_dag.php" />
         <option value="$PROJECT_DIR$/Facebook/vertical_tree.php" />
         <option value="$PROJECT_DIR$/Sorting/radix.php" />
-        <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/dijkstra.php" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/dag.php" />
         <option value="$PROJECT_DIR$/GraphTheory/LongestSubsequence/ls.php" />
         <option value="$PROJECT_DIR$/Integers/order_statistics.php" />
@@ -90,22 +88,23 @@
         <option value="$PROJECT_DIR$/HackerRank/Search/lonely_integer.php" />
         <option value="$PROJECT_DIR$/HackerRank/Search/ice_cream_parlor.txt" />
         <option value="$PROJECT_DIR$/HackerRank/Search/ice_cream_parlor.php" />
-        <option value="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.txt" />
-        <option value="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.c" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/helloworld.cpp" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.cpp" />
         <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php" />
+        <option value="$PROJECT_DIR$/GraphTheory/ShortestPath/dijkstra.php" />
+        <option value="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.txt" />
+        <option value="$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="-4" />
-    <option name="width" value="1863" />
-    <option name="height" value="1084" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -271,7 +270,7 @@
     <property name="last_opened_file_path" value="/workspace/oht_96" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="editor" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -290,15 +289,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -337,7 +336,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="-4" width="1863" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -346,7 +345,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25591636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25518832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,13 +503,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HackerRank/DynamicProgramming/lcs.py">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7258065" vertical-offset="0" max-vertical-offset="620">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HackerRank/DynamicProgramming/lcs.txt">
@@ -695,38 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bfs_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28476822" vertical-offset="1020" max-vertical-offset="1980">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0625" vertical-offset="0" max-vertical-offset="270">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/dijkstra.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6490066" vertical-offset="1272" max-vertical-offset="2178">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.80794704" vertical-offset="1200" max-vertical-offset="2538">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bellman_ford.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
@@ -738,14 +705,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1908">
           <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/bfs_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.52" vertical-offset="115" max-vertical-offset="1650">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/belman_ford.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8013245" vertical-offset="372" max-vertical-offset="1278">
-          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.504" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphTheory/ShortestPath/dijkstra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.28" vertical-offset="0" max-vertical-offset="1815">
+          <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21774194" vertical-offset="0" max-vertical-offset="620">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HackerRank/Graph/snakes_and_ladders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.528" vertical-offset="0" max-vertical-offset="2085">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>

@@ -8,24 +8,61 @@ while (!feof($inputFile)) {
 }
 fclose($inputFile);
 
-define('INFINITY', 10000000);
+class vertex
+{
+    public $key         = null;
+    public $visited     = 0;
+    public $distance    = 1000000;  // infinite
+    public $parent      = null;
+    public $path        = null;
+
+    public function __construct($key)
+    {
+        $this->key  = $key;
+    }
+}
+
+class PriorityQueue extends SplPriorityQueue
+{
+    public function compare($a, $b)
+    {
+        if ($a === $b) return 0;
+        return $a > $b ? -1 : 1;
+    }
+}
 
 $i = 0;
 $j = 2;
 $g = build_graph();
 initial_fill_graph($g);
-$len = count($g);
+
+$len        = count($g);
 
 while ($i < $data[0]) {
-    $dist       = array();
     $t          = $g;
+    $vertexes   = 1;
     $ladders    =  $data[$j];
     $snakes     =  $data[$j+1];
-    //fill_ladders($t, explode(" ", $ladders));
-    //fill_snakes($t, explode(" ", $snakes));
+    fill_graph($t, explode(" ", $ladders));
+    fill_graph($t, explode(" ", $snakes));
 
-    print_r(dijkstra($t, 0, 99));
-    exit();
+    $vertices   = array();
+    for ($k = 0; $k < $len; $k++) {
+        $vertices[$k] = new vertex($k);
+    }
+    $adjacencyList = array();
+    for ($u = 0; $u < $len; $u++) {
+        $list = new SplDoublyLinkedList();
+        for ($v = 0; $v < $len; $v++) {
+            if ($t[$u][$v] != 0) {
+                $list->push(array('vertex' => $vertices[$v], 'distance' => $t[$u][$v]));
+            }
+        }
+        $list->rewind();
+        $adjacencyList[] = $list;
+    }
+    calcShortestPaths($vertices[0], $adjacencyList);
+    echo "[" . implode(", ", end($vertices)->path) . "] \n";
     $j = $j + 3;
     $i++;
 }
@@ -51,85 +88,46 @@ function initial_fill_graph(&$graph = array())
     }
 }
 
-//function fill_graph(&$graph = array(), $range = array())
-//{
-//    foreach ($range as $key => $value) {
-//        $t = explode(',', $value);
-//        foreach ($graph[$t[0]-1] as $key => $value) {
-//            $graph[$t[0]-1][$key] = 0;
-//        }
-//        $graph[$t[0]-1][$t[1]-1] = 1;
-//    }
-//}
-
-function fill_snakes(&$graph = array(), $range = array())
+function fill_graph(&$graph = array(), $range = array())
 {
-    $snakes = array();
+    $ls = array();
     foreach ($range as $key => $value) {
         $t = explode(',', $value);
-        $snakes[trim($t[0])] = trim($t[1]);
+        $ls[trim($t[0])] = trim($t[1]);
     }
-
-    asort($snakes);
-    $weight = -1;
-    foreach ($snakes as $k => $v) {
-        foreach ($graph[$k-1] as $key => $value) {
-            $graph[$k-1][$key] = 0;
-        }
-        $graph[$k-1][$v-1] = $weight;
-        $weight--;
+    foreach ($ls as $k => $v) {
+        $graph[$k-1][$v-1] = 1;
     }
 }
 
-function fill_ladders(&$graph = array(), $range = array())
+function calcShortestPaths(vertex $start, &$adjLists)
 {
-    $ladders = array();
-    foreach ($range as $key => $value) {
-        $t = explode(',', $value);
-        $ladders[trim($t[0])] = trim($t[1]);
-    }
-
-    asort($ladders);
-    $weight = 1;
-    foreach ($ladders as $k => $v) {
-        foreach ($graph[$k-1] as $key => $value) {
-            $graph[$k-1][$key] = 0;
-        }
-        $graph[$k-1][$v-1] = $weight;
-        $weight++;
-    }
-}
-
-function dijkstra( array $g, $start, $end = null )
-{
-    $d = array();
-    $p = array();
-    $q = array( 0 => $start );
-
-    foreach( $q as $v )
-    {
-        $d[$v] = $q[$v];
-        if( $v == $end )
-            break;
-
-        foreach( $g[$v] as $w )
-        {
-            $vw = $d[$v] + $g[$v][$w];
-
-            if( in_array( $w, $d ))
-            {
-                if( $vw < $d[$w]) {
-                    throw new Exception('Dijkstra: found better path to already-final vertex');
+    // define an empty queue
+    $q = new PriorityQueue();
+    // push the starting vertex into the queue
+    $q->insert($start, 0);
+    $q->rewind();
+    // mark the distance to it 0
+    $start->distance = 0;
+    // the path to the starting vertex
+    $start->path = array($start->key);
+    while ($q->valid()) {
+        $t = $q->extract();
+        $t->visited = 1;
+        $l = $adjLists[$t->key];
+        while ($l->valid()) {
+            $item = $l->current();
+            if (!$item['vertex']->visited) {
+                if ($item['vertex']->distance > $t->distance + $item['distance']) {
+                    $item['vertex']->distance = $t->distance + $item['distance'];
+                    $item['vertex']->parent = $t;
                 }
-
+                $item['vertex']->path = array_merge($t->path, array($item['vertex']->key));
+                $q->insert($item["vertex"], $item["vertex"]->distance);
             }
-            elseif( $vw < $q[$w] )
-            {
-                $q[$w] = $vw;
-                $p[$w] = $v;
-            }
+            $l->next();
         }
-
-        return array( $d, $p );
+        $q->recoverFromCorruption();
+        $q->rewind();
     }
 }

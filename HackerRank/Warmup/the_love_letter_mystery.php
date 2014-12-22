@@ -19,7 +19,7 @@ function love_letter($str)
     $count  = 0;
     for($i=0; $i < $until; ++$i) {
         if ($str[$i] != $str[$len - $i - 1]) {
-            $count = $count + abs(ord('e') - ord('p'));
+            $count = $count + abs(ord($str[$i]) - ord($str[$len - $i - 1]));
         }
     }
     echo $count;

@@ -4,46 +4,29 @@ $inputFile = fopen("acm_icpc_team.txt", "r") or die("Unable to open file!");
 
 $data = array();
 while(!feof($inputFile)) {
-    $data[] = fgets($inputFile);
+    $data[] = trim(fgets($inputFile));
 }
 fclose($inputFile);
 
-$matrix = array();
-for ($i = 1; $i < count($data); $i++) {
-    $length = strlen(trim($data[$i]));
-    for ($j = 0; $j < $length; $j++) {
-        $matrix[$i-1][] = $data[$i][$j];
-    }
-}
-
-$result = find_maximum($matrix);
+unset($data[0]);
+$result = find_maximum($data);
 while (list($key, $value) = each($result)) {
     echo $value, "\n";
 }
 
 function find_maximum(Array $matrix)
 {
-    $length = count($matrix);
-    $c          = 0;
+    $length     = count($matrix);
     $max        = 0;
     $result     = array();
-    $maxValue   = count($matrix[0]);
 
-    while ($c < $length) {
-        for ($i = 0; $i < count($matrix); $i++) {
-            if ($c == $i) {
-                continue;
-            }
-            $t = 0;
-            for ($j = 0; $j < count($matrix[$i]); $j++) {
-                $t = $t + ($matrix[$i][$j] or $matrix[$c][$j]);
-            }
-            $max = max($t, $max);
-            if ($t == $maxValue) {
-                $result[] = 1;
-            }
+    for ($i = 1; $i < $length+1; $i++) {
+        for ($j = $i+1; $j < $length+1; $j++) {
+            $str    = $matrix[$i] | $matrix[$j];
+            $t      = strlen(str_replace('0','',$str));
+            $max    = max($max, $t);
+            $result[$t][] = 1;
         }
-        $c++;
     }
-    return array($max, count($result) / 2);
+    return array($max, count($result[$max]));
 }

@@ -12,10 +12,16 @@ for ($i = 1; $i < count($data); $i++) {
     echo sas(trim($data[$i])), "\n";
 }
 
-// http://math.stackexchange.com/questions/548043/how-to-find-all-perfect-squares-in-a-given-range-of-numbers
 function sas($str)
 {
     $exploded   = explode(' ', $str);
+    $root       = sqrt($exploded[0]);
+    if ((int)$root == $root) {
+        $exploded[0] = $exploded[0] - 1;
+    }
+    if ($exploded[0] < 0) {
+        $exploded[0] = 0;
+    }
     return floor(sqrt($exploded[1])) - floor(sqrt($exploded[0]));
 }
 

@@ -14,32 +14,11 @@ for ($i = 1; $i < count($data); $i++) {
 
 function flipping_bits($n)
 {
-    $a = 0b00000000000000000000000000000000;
-    //$a = 0b00000000;
-    $n = 4;
-
-    $bin = decbin(4294967294);
+    $result = '';
+    $bin = decbin($n);
     $bin = substr("00000000000000000000000000000000", 0, 32 - strlen($bin)) . $bin;
-
-//    $bedon = $a | $bin;
-    print_r($bin);
-    echo "\n";
-    exit();
-    return $a & $n;
+    for ($i = 0; $i < strlen($bin); $i++) {
+        $result .= $bin[$i] ^ 1;
+    }
+    return bindec($result);
 }
-
-
-//<?php
-//$n    = trim(fgets(STDIN));
-//$i    = 0;
-//while($i < intval($n)) {
-//    echo flipping_bits(trim(fgets(STDIN))), "\n";
-//    $i++;
-//}
-//
-//function flipping_bits($n)
-//{
-//    return 0b00000000000000000000000000000000 | $n;
-//}
-//
-//?>

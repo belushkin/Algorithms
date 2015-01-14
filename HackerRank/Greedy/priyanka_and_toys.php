@@ -13,22 +13,15 @@ echo greedy($data[1]), "\n";
 function greedy($weights)
 {
     $weights = explode(" ", $weights);
-    $result = $weights[0] + 4;
+    sort($weights);
 
-    echo $result;
-//    sort($weights);
-    $i = 0;
-    foreach($weights as $w) {
-        if ($w <= $result) {
-            $i++;
-            continue;
+    $result = 1;
+    $weight = $weights[0];
+    for ($i = 1; $i < count($weights); $i++) {
+        if ($weights[$i] - $weight > 4) {
+            $weight = $weights[$i];
+            $result++;
         }
-        break;
     }
-    return $i;
+    return $result;
 }
-
-//3
-
-//10
-//16 18 10 13 2 9 17 17 0 19

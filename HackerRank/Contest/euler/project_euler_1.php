@@ -9,21 +9,23 @@ while(!feof($inputFile)) {
 fclose($inputFile);
 
 $n = $data[0];
-for ($i = 1; $i < $n+1; $i++) {
-    echo euler($data[$i]), "\n";
-}
+//for ($i = 1; $i < $n+1; $i++) {
+    echo euler(1000,3) + euler(1000,5) - euler(1000,15), "\n";
+//}
 
-// http://stackoverflow.com/questions/4587320/project-euler-1find-the-sum-of-all-the-multiples-of-3-or-5-below-1000
-// :Find the sum of all the multiples of 3 or 5 below 1000
-//For n=10; and k =3; ( 3 * (3+1) / 2) * 3
-function euler($n)
+function euler($k, $n)
 {
-    $result = 0;
-    $k1     = 3;
-    $k2     = 5;
-
-//    $result = ()
-
-
-
+    $m = ($k-1) / $n;
+    return $n * $m * ($m+1) / 2;
 }
+
+
+//def sum_factors_of_n_below_k(k, n):
+//    m = (k-1) // n
+//    return n * m * (m+1) // 2
+//
+//def solution_01():
+//    return (sum_factors_of_n_below_k(1000, 3) +
+//        sum_factors_of_n_below_k(1000, 5) -
+//        sum_factors_of_n_below_k(1000, 15))
+

@@ -5,11 +5,14 @@ substring between these two pointers. The answer is basically the maximum number
 */
 
 // two pointers techniq, sliding window
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 public int lengthOfLongestSubstring(String s) {
         if(s.length() == 0) return 0;
         HashSet<Character> set = new HashSet<>();
+
         int left = 0 , right = 0 , ans = 0;
+
         while(left < s.length() && right < s.length()){
             if(!set.contains(s.charAt(right))){
                 set.add(s.charAt(right++));
